@@ -1,0 +1,110 @@
+﻿@model List<Kataandi.Models.Barcode>
+
+@{
+    ViewBag.Title = "Barcode Scanner with Geolocation";
+}
+
+<h2>Barcode Scanner with Geolocation</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Barcode Data</th>
+                <th>Scanned At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var scan in Model)
+            {
+                <tr>
+                    <td>@scan.Id_sinas</td>
+                    <td>@scan.Tahun_Barang</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No barcodes scanned yet.</p>
+}
+
+<div id="scanner-container"></div>
+<button id="get-location" class="btn btn-secondary">Get Location</button>
+<button id="start-scan" class="btn btn-primary" disabled>Start Scan</button>
+
+<form id="barcode-form" asp-action="Scan" asp-controller="BarcodeScanner" method="post">
+    <input type="hidden" name="Id_sinas" id="Id_sinas" />
+    <input type="hidden" name="Latitude" id="Latitude" />
+    <input type="hidden" name="Longitude" id="Longitude" />
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    document.getElementById('get-location').addEventListener('click', function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                document.getElementById('Latitude').value = position.coords.latitude;
+                document.getElementById('Longitude').value = position.coords.longitude;
+                alert("Location obtained: Latitude " + position.coords.latitude + ", Longitude " + position.coords.longitude);
+
+                // Enable the start scan button after getting the location
+                document.getElementById('start-scan').disabled = false;
+            }, function (error) {
+                alert("Geolocation error: " + error.message);
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+
+    document.getElementById('start-scan').addEventListener('click', function () {
+        Quagga.init({
+            inputStream: {
+                type: "LiveStream",
+                target: document.querySelector('#scanner-container'),
+                constraints: {
+                    width: 640,
+                    height: 480,
+                    facingMode: "environment"
+                }
+            },
+            decoder: {
+                readers: ["code_128_reader"]
+            }
+        }, function (err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            console.log("Initialization finished. Ready to start");
+            Quagga.start();
+        });
+
+        Quagga.onDetected(function (data) {
+            var code = data.codeResult.code;
+            document.getElementById('Id_sinas').value = code;
+            document.getElementById('barcode-form').submit();
+            Quagga.stop();
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    document.getElementById('Latitude').value = position.coords.latitude;
+                    document.getElementById('Longitude').value = position.coords.longitude;
+                    alert("Location obtained: Latitude " + position.coords.latitude + ", Longitude " + position.coords.longitude);
+
+                    // Enable the start scan button after getting the location
+                    document.getElementById('start-scan').disabled = false;
+                }, function (error) {
+                    alert("Geolocation error: " + error.message);
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+    });
+</script>
