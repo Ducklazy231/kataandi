@@ -20,7 +20,7 @@ namespace Kataandi.Controllers
 
         public ActionResult Index()
         {
-            var scannedData = _context.Barcodes.FromSqlRaw("SELECT * FROM master.dbo.[Tbl.barcode];").ToList();
+            var scannedData = _context.Aset.FromSqlRaw("SELECT * FROM master.dbo.[Aset];").ToList();
             return View(scannedData);
         }
 
@@ -29,13 +29,14 @@ namespace Kataandi.Controllers
         {
             try
             {
-                if (!string.IsNullOrEmpty(request.Id_sinas))
+                if (!string.IsNullOrEmpty(request.Aset_No))
                 {
-                    var dataFilter = _context.Barcodes.FromSqlRaw($"SELECT * FROM master.dbo.[Tbl.barcode] WHERE Id_Sinas = {request.Id_sinas};");
+                    var dataFilter = _context.Aset.FromSqlRaw($"SELECT * FROM master.dbo.[Aset] WHERE Aset_No = {request.Aset_No};");
                     return Json(dataFilter);
                 }
-                return Json("ini pasti null" + request.Id_sinas);
-            } catch (Exception e)
+                return Json("ini pasti null" + request.Aset_No);
+            }
+            catch (Exception e)
             {
                 return Json(e.Message);
             }

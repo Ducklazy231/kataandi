@@ -1,4 +1,5 @@
 ﻿using Kataandi.Models;
+using Kataandi.Models.dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kataandi.Models
@@ -11,5 +12,6 @@ namespace Kataandi.Models
         }
 
         public DbSet<Barcode> Barcodes { get; set; }
+        public DbSet<Aset> Aset { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<Kataandi.Models.Barcode>
+﻿@model List<Kataandi.Models.dto.Aset>
 
 @{
     ViewBag.Title = "Barcode Scanner with Geolocation";
@@ -6,22 +6,24 @@
 
 <h2>Barcode Scanner with Geolocation</h2>
 
+
 @if (Model != null && Model.Any())
 {
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Barcode Data</th>
-                <th>Scanned At</th>
+                <th>Aset No</th>
+                <th>Nomor Aset MySAP</th>
+                <th>Deskripsi</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var scan in Model)
             {
                 <tr>
-                    <td>@scan.Id_sinas</td>
-                    <td>@scan.Tahun_Barang</td>
+                    <td>@scan.Aset_No</td>
+                    <td>@scan.Nomor_Aset_MySAP</td>
+                    <td>@scan.Deskripsi</td>
                 </tr>
             }
         </tbody>
@@ -37,7 +39,7 @@ else
 <button id="start-scan" class="btn btn-primary" disabled>Start Scan</button>
 
 <form id="barcode-form" asp-action="Scan" asp-controller="BarcodeScanner" method="post">
-    <input type="hidden" name="Id_sinas" id="Id_sinas" />
+    <input type="hidden" name="Aset_No" id="Aset_No" />
     <input type="hidden" name="Latitude" id="Latitude" />
     <input type="hidden" name="Longitude" id="Longitude" />
 </form>
@@ -87,8 +89,9 @@ else
         });
 
         Quagga.onDetected(function (data) {
+            console.log("AnusunA")
             var code = data.codeResult.code;
-            document.getElementById('Id_sinas').value = code;
+            document.getElementById('').value = code;
             document.getElementById('barcode-form').submit();
             Quagga.stop();
             if (navigator.geolocation) {

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace Kataandi

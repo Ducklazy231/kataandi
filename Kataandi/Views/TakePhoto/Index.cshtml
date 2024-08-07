@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebcamJS Example</title>
+    <style>
+        #my_camera {
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+
+        #results {
+            border: 1px solid black;
+            width: 320px;
+            height: 240px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="my_camera"></div>
+    <button id="take_snapshot_button">Take Snapshot</button>
+    <div id="results">Your captured image will appear here...</div>
+
+    <!-- Include the Webcam.js library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+
+    <script language="JavaScript">
+        document.addEventListener("DOMContentLoaded", function () {
+            // Set up the webcam
+            Webcam.set({
+                width: 320,
+                height: 240,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach('#my_camera');
+
+            // Error handling: Log any errors if the camera fails to initialize
+            Webcam.on('error', function (err) {
+                console.error("Error accessing camera: ", err);
+            });
+
+            // Set up the event listener for the button
+            document.getElementById('take_snapshot_button').addEventListener('click', take_snapshot);
+
+            // Function to take a snapshot
+            function take_snapshot() {
+                Webcam.snap(function (data_uri) {
+                    // Display the captured image in the results div
+                    document.getElementById('results').innerHTML =
+                        '<h2>Here is your image:</h2>' +
+                        '<img src="' + data_uri + '"/>';
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

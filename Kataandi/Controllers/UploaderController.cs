@@ -8,7 +8,7 @@ using ZXing.SkiaSharp;
 namespace Kataandi.Controllers
 {
     [Route("api/controller")]
-    [ApiController]    
+    [ApiController]
     public class UploaderController : ControllerBase
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
@@ -61,4 +61,4 @@ namespace Kataandi.Controllers
             }
         }
     }
-}   
+}

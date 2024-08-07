@@ -1,0 +1,113 @@
+﻿@model Kataandi.Models.dto.Aset
+
+@{
+    ViewData["Title"] = "Delete Asset";
+}
+
+<h2>Delete Asset</h2>
+
+<h3>Are you sure you want to delete this asset?</h3>
+
+<div>
+    <h4>Aset</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aset_No)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aset_No)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line_No)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line_No)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nomor_Aset_MySAP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nomor_Aset_MySAP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MySAP_Line_No)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MySAP_Line_No)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Harmoni_No)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Harmoni_No)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sinas_No)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sinas_No)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Deskripsi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Deskripsi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Merk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Merk)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategori_Asset)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kategori_Asset)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tahun_Perolehan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tahun_Perolehan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status_Penggunaan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status_Penggunaan)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kondis_Aset)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kondis_Aset)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lokasi_Aset)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lokasi_Aset)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Aset_No" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

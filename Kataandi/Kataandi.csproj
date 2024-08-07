@@ -4,6 +4,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <Content Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.5.1" />
@@ -17,8 +23,88 @@
   <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\febri\source\repos\Kataandi\Kataandi\Models\.editorconfig" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\net7.0\appsettings.Development.json" />
+    <Content Include="bin\Debug\net7.0\appsettings.json" />
+    <Content Include="bin\Debug\net7.0\Kataandi.deps.json" />
+    <Content Include="bin\Debug\net7.0\Kataandi.runtimeconfig.json" />
+    <Content Include="bin\Debug\net7.0\Kataandi.staticwebassets.runtime.json" />
+    <Content Include="bin\Release\net7.0\appsettings.Development.json" />
+    <Content Include="bin\Release\net7.0\appsettings.json" />
+    <Content Include="bin\Release\net7.0\Kataandi.deps.json" />
+    <Content Include="bin\Release\net7.0\Kataandi.runtimeconfig.json" />
+    <Content Include="bin\Release\net7.0\Kataandi.staticwebassets.runtime.json" />
+  </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\net7.0\Azure.Core.dll" />
+    <None Include="bin\Debug\net7.0\Azure.Identity.dll" />
+    <None Include="bin\Debug\net7.0\EntityFramework.dll" />
+    <None Include="bin\Debug\net7.0\EntityFramework.SqlServer.dll" />
+    <None Include="bin\Debug\net7.0\Kataandi.dll" />
+    <None Include="bin\Debug\net7.0\Kataandi.exe" />
+    <None Include="bin\Debug\net7.0\Kataandi.pdb" />
+    <None Include="bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.Identity.Client.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.SqlServer.Server.dll" />
+    <None Include="bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\osx\native\libSkiaSharp.dylib" />
+    <None Include="bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-arm64\native\libSkiaSharp.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x64\native\libSkiaSharp.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x64\native\sni.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win-x86\native\sni.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll" />
+    <None Include="bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\SkiaSharp.dll" />
+    <None Include="bin\Debug\net7.0\System.CodeDom.dll" />
+    <None Include="bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll" />
+    <None Include="bin\Debug\net7.0\System.Data.SqlClient.dll" />
+    <None Include="bin\Debug\net7.0\System.Drawing.Common.dll" />
+    <None Include="bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll" />
+    <None Include="bin\Debug\net7.0\System.Memory.Data.dll" />
+    <None Include="bin\Debug\net7.0\System.Runtime.Caching.dll" />
+    <None Include="bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll" />
+    <None Include="bin\Debug\net7.0\System.Security.Permissions.dll" />
+    <None Include="bin\Debug\net7.0\System.Windows.Extensions.dll" />
+    <None Include="bin\Debug\net7.0\web.config" />
+    <None Include="bin\Debug\net7.0\zxing.dll" />
+    <None Include="bin\Debug\net7.0\ZXing.SkiaSharp.dll" />
+    <None Include="bin\Release\net7.0\Kataandi.dll" />
+    <None Include="bin\Release\net7.0\Kataandi.exe" />
+    <None Include="bin\Release\net7.0\Kataandi.pdb" />
+    <None Include="bin\Release\net7.0\runtimes\osx\native\libSkiaSharp.dylib" />
+    <None Include="bin\Release\net7.0\runtimes\win-arm64\native\libSkiaSharp.dll" />
+    <None Include="bin\Release\net7.0\runtimes\win-x64\native\libSkiaSharp.dll" />
+    <None Include="bin\Release\net7.0\runtimes\win-x86\native\libSkiaSharp.dll" />
+    <None Include="bin\Release\net7.0\SkiaSharp.dll" />
+    <None Include="bin\Release\net7.0\zxing.dll" />
+    <None Include="bin\Release\net7.0\ZXing.SkiaSharp.dll" />
     <None Include="C:\Users\febri\source\repos\Kataandi\Kataandi\Models\.editorconfig" />
   </ItemGroup>
 

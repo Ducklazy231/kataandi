@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Kataandi.Models
 {
-    public class Barcode
+    public class Barcode 
     {
 
         [Key]
