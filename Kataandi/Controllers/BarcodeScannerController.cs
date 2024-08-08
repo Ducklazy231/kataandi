@@ -20,7 +20,7 @@ namespace Kataandi.Controllers
 
         public ActionResult Index()
         {
-            var scannedData = _context.Aset.FromSqlRaw("SELECT * FROM master.dbo.[Aset];").ToList();
+            var scannedData = _context.MD_Aset.FromSqlRaw("SELECT * FROM master.dbo.[MD_Aset];").ToList();
             return View(scannedData);
         }
 
@@ -31,7 +31,7 @@ namespace Kataandi.Controllers
             {
                 if (!string.IsNullOrEmpty(request.Aset_No))
                 {
-                    var dataFilter = _context.Aset.FromSqlRaw($"SELECT * FROM master.dbo.[Aset] WHERE Aset_No = {request.Aset_No};");
+                    var dataFilter = _context.MD_Aset.FromSqlRaw($"SELECT * FROM master.dbo.[MD_Aset] WHERE AsetNo = {request.Aset_No};");
                     return Json(dataFilter);
                 }
                 return Json("ini pasti null" + request.Aset_No);

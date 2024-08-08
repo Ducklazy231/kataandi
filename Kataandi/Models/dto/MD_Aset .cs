@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Kataandi.Models.dto
 {
-    public class Aset
+    public class MD_Aset
     {
         [Key]
         public string AsetNo { get; set; }

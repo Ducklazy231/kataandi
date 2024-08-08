@@ -13,23 +13,24 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.newAset.Aset_No)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Line_No)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Nomor_Aset_MySAP)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.MySAP_Line_No)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Harmoni_No)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Sinas_No)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.AsetNo)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.LineNo)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.LocationId)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.NomorAsetMySAP)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.MySAPLineNo)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.HarmoniNo)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.SinasNo)</th>
             <th>@Html.DisplayNameFor(model => model.newAset.Deskripsi)</th>
             <th>@Html.DisplayNameFor(model => model.newAset.Merk)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Kategori_Asset)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Tahun_Perolehan)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.KategoriAset)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.TahunPerolehan)</th>
             <th>@Html.DisplayNameFor(model => model.newAset.Amount)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Status_Penggunaan)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.StatusPenggunaan)</th>
             <th>@Html.DisplayNameFor(model => model.newAset.Level)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Kondis_Aset)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Lokasi_Aset)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Path_Foto_Tagging)</th>
-            <th>@Html.DisplayNameFor(model => model.newAset.Path_Foto_Keseluruhan)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.KondisiAset)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.LokasiAset)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.PathFotoTagging)</th>
+            <th>@Html.DisplayNameFor(model => model.newAset.PathFotoKeseluruhan)</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -37,27 +38,28 @@
         @foreach (var item in Model.assets)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Aset_No)</td>
-                <td>@Html.DisplayFor(modelItem => item.Line_No)</td>
-                <td>@Html.DisplayFor(modelItem => item.Nomor_Aset_MySAP)</td>
-                <td>@Html.DisplayFor(modelItem => item.MySAP_Line_No)</td>
-                <td>@Html.DisplayFor(modelItem => item.Harmoni_No)</td>
-                <td>@Html.DisplayFor(modelItem => item.Sinas_No)</td>
+                <td>@Html.DisplayFor(modelItem => item.AsetNo)</td>
+                <td>@Html.DisplayFor(modelItem => item.LineNo)</td>
+                <td>@Html.DisplayFor(modelItem => item.LocationId)</td>
+                <td>@Html.DisplayFor(modelItem => item.NomorAsetMySAP)</td>
+                <td>@Html.DisplayFor(modelItem => item.MySAPLineNo)</td>
+                <td>@Html.DisplayFor(modelItem => item.HarmoniNo)</td>
+                <td>@Html.DisplayFor(modelItem => item.SinasNo)</td>
                 <td>@Html.DisplayFor(modelItem => item.Deskripsi)</td>
                 <td>@Html.DisplayFor(modelItem => item.Merk)</td>
-                <td>@Html.DisplayFor(modelItem => item.Kategori_Asset)</td>
-                <td>@Html.DisplayFor(modelItem => item.Tahun_Perolehan)</td>
+                <td>@Html.DisplayFor(modelItem => item.KategoriAset)</td>
+                <td>@Html.DisplayFor(modelItem => item.TahunPerolehan)</td>
                 <td>@Html.DisplayFor(modelItem => item.Amount)</td>
-                <td>@Html.DisplayFor(modelItem => item.Status_Penggunaan)</td>
+                <td>@Html.DisplayFor(modelItem => item.StatusPenggunaan)</td>
                 <td>@Html.DisplayFor(modelItem => item.Level)</td>
-                <td>@Html.DisplayFor(modelItem => item.Kondis_Aset)</td>
-                <td>@Html.DisplayFor(modelItem => item.Lokasi_Aset)</td>
-                <td>@Html.DisplayFor(modelItem => item.Path_Foto_Tagging)</td>
-                <td>@Html.DisplayFor(modelItem => item.Path_Foto_Keseluruhan)</td>
+                <td>@Html.DisplayFor(modelItem => item.KondisiAset)</td>
+                <td>@Html.DisplayFor(modelItem => item.LokasiAset)</td>
+                <td>@Html.DisplayFor(modelItem => item.PathFotoTagging)</td>
+                <td>@Html.DisplayFor(modelItem => item.PathFotoKeseluruhan)</td>
                 <td>
-                    <a asp-action="Edit" asp-route-Aset_No="@item.Aset_No" class="btn btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-Aset_No="@item.Aset_No" class="btn btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-Aset_No="@item.Aset_No" class="btn btn-danger">
+                    <a asp-action="Edit" asp-route-Aset_No="@item.AsetNo" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-Aset_No="@item.AsetNo" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-Aset_No="@item.AsetNo" class="btn btn-danger">
                         Delete</a>
                     @* <form asp-action="Delete" asp-route-id="@item.Line_No" method="post" style="display:inline;">
                      @Html.AntiForgeryToken()
@@ -75,32 +77,42 @@
 
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create" id="aset-form" asp-controller="Aset" method="post">
+        <form asp-action="Create" id="aset-form" asp-controller="MD_Aset" method="post">
             @Html.AntiForgeryToken()
             <div class="form-group">
-                <label asp-for="newAset.Aset_No" class="control-label"></label>
-                <input asp-for="newAset.Aset_No" class="form-control" />
-                <span asp-validation-for="newAset.Aset_No" class="text-danger"></span>
+                <label asp-for="newAset.AsetNo" class="control-label"></label>
+                <input asp-for="newAset.AsetNo" class="form-control" />
+                <span asp-validation-for="newAset.AsetNo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Nomor_Aset_MySAP" class="control-label"></label>
-                <input asp-for="newAset.Nomor_Aset_MySAP" class="form-control" />
-                <span asp-validation-for="newAset.Nomor_Aset_MySAP" class="text-danger"></span>
+                <label asp-for="newAset.LineNo" class="control-label"></label>
+                <input asp-for="newAset.LineNo" class="form-control" />
+                <span asp-validation-for="newAset.LineNo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.MySAP_Line_No" class="control-label"></label>
-                <input asp-for="newAset.MySAP_Line_No" class="form-control" />
-                <span asp-validation-for="newAset.MySAP_Line_No" class="text-danger"></span>
+                <label asp-for="newAset.LocationId" class="control-label"></label>
+                <input asp-for="newAset.LocationId" class="form-control" />
+                <span asp-validation-for="newAset.LocationId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Harmoni_No" class="control-label"></label>
-                <input asp-for="newAset.Harmoni_No" class="form-control" />
-                <span asp-validation-for="newAset.Harmoni_No" class="text-danger"></span>
+                <label asp-for="newAset.NomorAsetMySAP" class="control-label"></label>
+                <input asp-for="newAset.NomorAsetMySAP" class="form-control" />
+                <span asp-validation-for="newAset.NomorAsetMySAP" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Sinas_No" class="control-label"></label>
-                <input asp-for="newAset.Sinas_No" class="form-control" />
-                <span asp-validation-for="newAset.Sinas_No" class="text-danger"></span>
+                <label asp-for="newAset.MySAPLineNo" class="control-label"></label>
+                <input asp-for="newAset.MySAPLineNo" class="form-control" />
+                <span asp-validation-for="newAset.MySAPLineNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="newAset.HarmoniNo" class="control-label"></label>
+                <input asp-for="newAset.HarmoniNo" class="form-control" />
+                <span asp-validation-for="newAset.HarmoniNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="newAset.SinasNo" class="control-label"></label>
+                <input asp-for="newAset.SinasNo" class="form-control" />
+                <span asp-validation-for="newAset.SinasNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="newAset.Deskripsi" class="control-label"></label>
@@ -113,14 +125,14 @@
                 <span asp-validation-for="newAset.Merk" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Kategori_Asset" class="control-label"></label>
-                <input asp-for="newAset.Kategori_Asset" class="form-control" />
-                <span asp-validation-for="newAset.Kategori_Asset" class="text-danger"></span>
+                <label asp-for="newAset.KategoriAset" class="control-label"></label>
+                <input asp-for="newAset.KategoriAset" class="form-control" />
+                <span asp-validation-for="newAset.KategoriAset" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Tahun_Perolehan" class="control-label"></label>
-                <input asp-for="newAset.Tahun_Perolehan" class="form-control" />
-                <span asp-validation-for="newAset.Tahun_Perolehan" class="text-danger"></span>
+                <label asp-for="newAset.TahunPerolehan" class="control-label"></label>
+                <input asp-for="newAset.TahunPerolehan" class="form-control" />
+                <span asp-validation-for="newAset.TahunPerolehan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="newAset.Amount" class="control-label"></label>
@@ -128,9 +140,9 @@
                 <span asp-validation-for="newAset.Amount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Status_Penggunaan" class="control-label"></label>
-                <input asp-for="newAset.Status_Penggunaan" class="form-control" />
-                <span asp-validation-for="newAset.Status_Penggunaan" class="text-danger"></span>
+                <label asp-for="newAset.StatusPenggunaan" class="control-label"></label>
+                <input asp-for="newAset.StatusPenggunaan" class="form-control" />
+                <span asp-validation-for="newAset.StatusPenggunaan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="newAset.Level" class="control-label"></label>
@@ -138,24 +150,24 @@
                 <span asp-validation-for="newAset.Level" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Kondis_Aset" class="control-label"></label>
-                <input asp-for="newAset.Kondis_Aset" class="form-control" />
-                <span asp-validation-for="newAset.Kondis_Aset" class="text-danger"></span>
+                <label asp-for="newAset.KondisiAset" class="control-label"></label>
+                <input asp-for="newAset.KondisiAset" class="form-control" />
+                <span asp-validation-for="newAset.KondisiAset" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Lokasi_Aset" class="control-label"></label>
-                <input asp-for="newAset.Lokasi_Aset" class="form-control" />
-                <span asp-validation-for="newAset.Lokasi_Aset" class="text-danger"></span>
+                <label asp-for="newAset.LokasiAset" class="control-label"></label>
+                <input asp-for="newAset.LokasiAset" class="form-control" />
+                <span asp-validation-for="newAset.LokasiAset" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Path_Foto_Tagging" class="control-label"></label>
-                <input asp-for="newAset.Path_Foto_Tagging" class="form-control" />
-                <span asp-validation-for="newAset.Path_Foto_Tagging" class="text-danger"></span>
+                <label asp-for="newAset.PathFotoTagging" class="control-label"></label>
+                <input asp-for="newAset.PathFotoTagging" class="form-control" />
+                <span asp-validation-for="newAset.PathFotoTagging" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="newAset.Path_Foto_Keseluruhan" class="control-label"></label>
-                <input asp-for="newAset.Path_Foto_Keseluruhan" class="form-control" />
-                <span asp-validation-for="newAset.Path_Foto_Keseluruhan" class="text-danger"></span>
+                <label asp-for="newAset.PathFotoKeseluruhan" class="control-label"></label>
+                <input asp-for="newAset.PathFotoKeseluruhan" class="form-control" />
+                <span asp-validation-for="newAset.PathFotoKeseluruhan" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

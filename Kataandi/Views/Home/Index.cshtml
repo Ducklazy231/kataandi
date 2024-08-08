@@ -12,8 +12,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Aset No</th>
-                <th>Nomor Aset MySAP</th>
+                <th>AsetNo</th>
+                <th>NomorAsetMySAP</th>
                 <th>Deskripsi</th>
             </tr>
         </thead>
@@ -21,8 +21,8 @@
             @foreach (var scan in Model)
             {
                 <tr>
-                    <td>@scan.Aset_No</td>
-                    <td>@scan.Nomor_Aset_MySAP</td>
+                    <td>@scan.AsetNo</td>
+                    <td>@scan.NomorAsetMySAP</td>
                     <td>@scan.Deskripsi</td>
                 </tr>
             }
@@ -39,7 +39,7 @@ else
 <button id="start-scan" class="btn btn-primary" disabled>Start Scan</button>
 
 <form id="barcode-form" asp-action="Scan" asp-controller="BarcodeScanner" method="post">
-    <input type="hidden" name="Aset_No" id="Aset_No" />
+    <input type="hidden" name="AsetNo" id="AsetNo" />
     <input type="hidden" name="Latitude" id="Latitude" />
     <input type="hidden" name="Longitude" id="Longitude" />
 </form>
@@ -89,8 +89,8 @@ else
         });
 
         Quagga.onDetected(function (data) {
-            console.log("AnusunA")
             var code = data.codeResult.code;
+            
             document.getElementById('').value = code;
             document.getElementById('barcode-form').submit();
             Quagga.stop();

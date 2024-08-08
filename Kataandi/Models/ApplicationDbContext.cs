@@ -13,5 +13,6 @@ namespace Kataandi.Models
 
         public DbSet<Barcode> Barcodes { get; set; }
         public DbSet<Aset> Aset { get; set; }
+        public DbSet<MD_Aset> MD_Aset { get; set; }
     }
 }

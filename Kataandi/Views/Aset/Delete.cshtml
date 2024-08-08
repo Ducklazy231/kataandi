@@ -1,4 +1,4 @@
-﻿@model Kataandi.Models.dto.Aset
+﻿@model Kataandi.Models.dto.MD_Aset
 
 @{
     ViewData["Title"] = "Delete Asset";
@@ -13,40 +13,46 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Aset_No)
+            @Html.DisplayNameFor(model => model.AsetNo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Aset_No)
+            @Html.DisplayFor(model => model.AsetNo)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Line_No)
+            @Html.DisplayNameFor(model => model.LineNo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Line_No)
+            @Html.DisplayFor(model => model.LineNo)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nomor_Aset_MySAP)
+            @Html.DisplayNameFor(model => model.LocationId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nomor_Aset_MySAP)
+            @Html.DisplayFor(model => model.LocationId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MySAP_Line_No)
+            @Html.DisplayNameFor(model => model.NomorAsetMySAP)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.MySAP_Line_No)
+            @Html.DisplayFor(model => model.NomorAsetMySAP)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Harmoni_No)
+            @Html.DisplayNameFor(model => model.MySAPLineNo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Harmoni_No)
+            @Html.DisplayFor(model => model.MySAPLineNo)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Sinas_No)
+            @Html.DisplayNameFor(model => model.HarmoniNo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Sinas_No)
+            @Html.DisplayFor(model => model.HarmoniNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SinasNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SinasNo)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Deskripsi)
@@ -61,16 +67,16 @@
             @Html.DisplayFor(model => model.Merk)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Kategori_Asset)
+            @Html.DisplayNameFor(model => model.KategoriAset)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Kategori_Asset)
+            @Html.DisplayFor(model => model.KategoriAset)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Tahun_Perolehan)
+            @Html.DisplayNameFor(model => model.TahunPerolehan)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Tahun_Perolehan)
+            @Html.DisplayFor(model => model.TahunPerolehan)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Amount)
@@ -79,10 +85,10 @@
             @Html.DisplayFor(model => model.Amount)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Status_Penggunaan)
+            @Html.DisplayNameFor(model => model.StatusPenggunaan)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Status_Penggunaan)
+            @Html.DisplayFor(model => model.StatusPenggunaan)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Level)
@@ -91,22 +97,22 @@
             @Html.DisplayFor(model => model.Level)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Kondis_Aset)
+            @Html.DisplayNameFor(model => model.KondisiAset)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Kondis_Aset)
+            @Html.DisplayFor(model => model.KondisiAset)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Lokasi_Aset)
+            @Html.DisplayNameFor(model => model.LokasiAset)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Lokasi_Aset)
+            @Html.DisplayFor(model => model.LokasiAset)
         </dd>
     </dl>
 
     <form asp-action="DeleteConfirmed" method="post">
         @Html.AntiForgeryToken()
-        <input type="hidden" asp-for="Aset_No" />
+        <input type="hidden" asp-for="AsetNo" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </form>
